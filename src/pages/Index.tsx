@@ -12,6 +12,7 @@ const stats = [
 ];
 
 const ctaLinks = [
+  { to: "/complete-seerah", label: "Full Narrative", desc: "The complete story, A to Z" },
   { to: "/timeline", label: "Start the Seerah", desc: "Complete scholarly timeline" },
   { to: "/hijrah", label: "Hijrah Journey", desc: "The migration narrative" },
   { to: "/themes", label: "Themes & Lessons", desc: "Timeless principles" },

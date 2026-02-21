@@ -10,6 +10,7 @@ const navLinks = [
   { to: "/hijrah", label: "Hijrah Journey" },
   { to: "/themes", label: "Themes" },
   { to: "/people-places", label: "People & Places" },
+  { to: "/complete-seerah", label: "Full Narrative" },
   { to: "/sources", label: "Sources" },
 ];
 
