@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
 import { AccessibilityProvider } from "@/context/AccessibilityContext";
 import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
@@ -17,6 +17,8 @@ const HijrahJourney = lazy(() => import("./pages/HijrahJourney"));
 const CompleteSeerah = lazy(() => import("./pages/CompleteSeerah"));
 
 const queryClient = new QueryClient();
+
+const Router = import.meta.env.PROD ? HashRouter : BrowserRouter;
 
 const Loading = () => (
   <div className="min-h-[60vh] flex items-center justify-center">
@@ -33,7 +35,7 @@ const App = () => (
       <AccessibilityProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <Router>
           <Layout>
             <Suspense fallback={<Loading />}>
               <Routes>
@@ -48,7 +50,7 @@ const App = () => (
               </Routes>
             </Suspense>
           </Layout>
-        </BrowserRouter>
+        </Router>
       </AccessibilityProvider>
     </TooltipProvider>
   </QueryClientProvider>
