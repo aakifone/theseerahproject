@@ -12,11 +12,8 @@ export default function ThemesPage() {
     <div className="min-h-screen">
       <section className="py-16 px-4 bg-card geometric-border border-b border-border">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="ornament-divider mb-4">
-            <span className="text-muted-foreground text-sm">✦</span>
-          </div>
-          <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Themes & Lessons</p>
-          <h1 className="font-serif text-5xl sm:text-6xl font-bold mb-4 italic">Timeless Principles</h1>
+          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Themes & Lessons</p>
+          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">Timeless Principles</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">
             The Seerah contains lessons that transcend time and place. Explore the major themes woven
             through the life of Prophet Muhammad ﷺ.
@@ -34,7 +31,7 @@ export default function ThemesPage() {
               return (
                 <SectionReveal key={theme.id} delay={i * 60}>
                   <div
-                    className={`rounded border bg-card transition-all ${
+                    className={`rounded-xl border bg-card transition-all ${
                       isExpanded ? "border-gold/50 shadow-lg" : "border-border hover:border-gold/30"
                     }`}
                   >
@@ -44,7 +41,7 @@ export default function ThemesPage() {
                     >
                       <div className="flex items-start justify-between gap-4">
                         <div>
-                          <h3 className="font-serif text-xl font-semibold mb-2 italic">{theme.title}</h3>
+                          <h3 className="font-serif text-xl font-semibold mb-2">{theme.title}</h3>
                           <p className="text-sm text-muted-foreground leading-relaxed">{theme.summary}</p>
                         </div>
                         {isExpanded ? (
@@ -63,15 +60,15 @@ export default function ThemesPage() {
 
                         {relatedEvts.length > 0 && (
                           <div>
-                            <h4 className="text-sm font-semibold mb-3 italic">Related Events</h4>
+                            <h4 className="text-sm font-semibold mb-3">Related Events</h4>
                             <div className="space-y-2">
                               {relatedEvts.map((evt) => (
                                 <Link
                                   key={evt.id}
                                   to={`/timeline?event=${evt.id}`}
-                                  className="group flex items-center gap-3 p-3 rounded hover:bg-muted transition-colors"
+                                  className="group flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors"
                                 >
-                                  <span className="text-xs text-muted-foreground w-20 shrink-0 italic">
+                                  <span className="text-xs text-muted-foreground w-20 shrink-0">
                                     {evt.dateRange}
                                   </span>
                                   <span className="text-sm font-medium group-hover:text-primary transition-colors">
@@ -85,7 +82,7 @@ export default function ThemesPage() {
                         )}
 
                         <div>
-                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1 italic">
+                          <h4 className="text-xs font-semibold mb-2 flex items-center gap-1">
                             <BookOpen className="h-3 w-3" /> Citations
                           </h4>
                           <ul className="space-y-1">

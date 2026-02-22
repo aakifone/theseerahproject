@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </a>
 
       {/* Scroll Progress */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-0.5">
+      <div className="fixed top-0 left-0 right-0 z-50 h-1">
         <div
           className="h-full bg-gold transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
@@ -57,18 +57,18 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-        <nav className="container mx-auto flex h-14 items-center justify-between px-4">
-          <Link to="/" className="font-serif text-2xl font-bold tracking-tight text-foreground italic">
+        <nav className="container mx-auto flex h-16 items-center justify-between px-4">
+          <Link to="/" className="font-serif text-xl font-bold tracking-tight text-foreground">
             The Seerah
           </Link>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm transition-colors hover:text-primary ${
-                  location.pathname === link.to ? "text-primary font-semibold" : "text-muted-foreground"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  location.pathname === link.to ? "text-primary" : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -79,24 +79,24 @@ export default function Layout({ children }: { children: ReactNode }) {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setSearchOpen(true)}
-              className="p-2 rounded text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               aria-label="Open search"
             >
-              <Search className="h-4 w-4" />
+              <Search className="h-5 w-5" />
             </button>
             <button
               onClick={() => setSettingsOpen(!settingsOpen)}
-              className="p-2 rounded text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               aria-label="Accessibility settings"
             >
-              <Settings2 className="h-4 w-4" />
+              <Settings2 className="h-5 w-5" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded lg:hidden text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+              className="p-2 rounded-md lg:hidden text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </nav>
@@ -142,10 +142,10 @@ export default function Layout({ children }: { children: ReactNode }) {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`text-sm py-2.5 px-3 rounded transition-colors ${
+                  className={`text-sm font-medium py-2.5 px-3 rounded-md transition-colors ${
                     location.pathname === link.to
-                      ? "text-primary bg-secondary font-semibold"
-                      : "text-muted-foreground hover:bg-secondary"
+                      ? "text-primary bg-secondary"
+                      : "text-muted-foreground hover:bg-muted"
                   }`}
                 >
                   {link.label}
@@ -162,16 +162,13 @@ export default function Layout({ children }: { children: ReactNode }) {
       <footer className="border-t border-border bg-card">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-lg mx-auto">
-            <div className="ornament-divider mb-6">
-              <span className="text-muted-foreground text-lg">❦</span>
-            </div>
-            <h3 className="font-serif text-3xl font-bold mb-3 italic">The Seerah</h3>
+            <h3 className="font-serif text-2xl font-semibold mb-3">The Seerah</h3>
             <p className="text-sm text-muted-foreground leading-relaxed mb-8">
               An educational resource exploring the life of Prophet Muhammad ﷺ. This content is for
               educational purposes and should be verified with scholarly sources. Dates noted as approximate
               reflect genuine historical uncertainty.
             </p>
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -183,7 +180,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               ))}
             </div>
             <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-xs text-muted-foreground italic">
+              <p className="text-xs text-muted-foreground">
                 Built with respect and scholarly care. Content contributions welcome.
               </p>
             </div>
