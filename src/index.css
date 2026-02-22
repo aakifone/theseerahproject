@@ -4,78 +4,78 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 220 18% 13%;
-    --card: 40 25% 98%;
-    --card-foreground: 220 18% 13%;
-    --popover: 40 25% 98%;
-    --popover-foreground: 220 18% 13%;
-    --primary: 158 38% 23%;
-    --primary-foreground: 40 30% 96%;
-    --secondary: 40 30% 91%;
-    --secondary-foreground: 158 38% 23%;
-    --muted: 40 18% 92%;
-    --muted-foreground: 220 10% 46%;
-    --accent: 38 65% 52%;
-    --accent-foreground: 220 18% 13%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 40 18% 87%;
-    --input: 40 18% 87%;
-    --ring: 158 38% 23%;
-    --radius: 0.5rem;
+    --background: 35 30% 92%;
+    --foreground: 25 30% 15%;
+    --card: 36 28% 88%;
+    --card-foreground: 25 30% 15%;
+    --popover: 36 28% 88%;
+    --popover-foreground: 25 30% 15%;
+    --primary: 345 35% 30%;
+    --primary-foreground: 35 30% 92%;
+    --secondary: 35 22% 82%;
+    --secondary-foreground: 345 35% 30%;
+    --muted: 35 18% 85%;
+    --muted-foreground: 25 15% 45%;
+    --accent: 35 55% 45%;
+    --accent-foreground: 25 30% 15%;
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 35 30% 92%;
+    --border: 30 20% 75%;
+    --input: 30 20% 75%;
+    --ring: 345 35% 30%;
+    --radius: 0.25rem;
 
-    --gold: 38 65% 52%;
-    --gold-light: 38 55% 72%;
-    --gold-dark: 38 70% 38%;
-    --emerald-light: 158 28% 38%;
-    --cream: 40 33% 96%;
-    --cream-dark: 40 22% 90%;
+    --gold: 35 55% 45%;
+    --gold-light: 35 45% 60%;
+    --gold-dark: 35 60% 32%;
+    --emerald-light: 345 25% 40%;
+    --cream: 35 30% 92%;
+    --cream-dark: 35 22% 82%;
 
-    --sidebar-background: 40 25% 97%;
-    --sidebar-foreground: 220 18% 13%;
-    --sidebar-primary: 158 38% 23%;
-    --sidebar-primary-foreground: 40 30% 96%;
-    --sidebar-accent: 40 30% 91%;
-    --sidebar-accent-foreground: 158 38% 23%;
-    --sidebar-border: 40 18% 87%;
-    --sidebar-ring: 158 38% 23%;
+    --sidebar-background: 36 26% 90%;
+    --sidebar-foreground: 25 30% 15%;
+    --sidebar-primary: 345 35% 30%;
+    --sidebar-primary-foreground: 35 30% 92%;
+    --sidebar-accent: 35 22% 82%;
+    --sidebar-accent-foreground: 345 35% 30%;
+    --sidebar-border: 30 20% 75%;
+    --sidebar-ring: 345 35% 30%;
   }
 
   .dark {
-    --background: 220 20% 8%;
-    --foreground: 40 20% 92%;
-    --card: 220 18% 11%;
-    --card-foreground: 40 20% 92%;
-    --popover: 220 18% 11%;
-    --popover-foreground: 40 20% 92%;
-    --primary: 158 35% 45%;
-    --primary-foreground: 220 20% 8%;
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 40 20% 92%;
-    --muted: 220 15% 18%;
-    --muted-foreground: 220 10% 55%;
-    --accent: 38 60% 50%;
-    --accent-foreground: 220 20% 8%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 40 20% 92%;
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 158 35% 45%;
-    --gold: 38 60% 50%;
-    --gold-light: 38 50% 65%;
-    --gold-dark: 38 65% 35%;
-    --emerald-light: 158 25% 50%;
-    --cream: 220 20% 8%;
-    --cream-dark: 220 18% 14%;
-    --sidebar-background: 220 18% 10%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 158 35% 45%;
-    --sidebar-primary-foreground: 220 20% 8%;
-    --sidebar-accent: 220 15% 18%;
-    --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 158 35% 45%;
+    --background: 25 20% 10%;
+    --foreground: 35 20% 85%;
+    --card: 25 18% 14%;
+    --card-foreground: 35 20% 85%;
+    --popover: 25 18% 14%;
+    --popover-foreground: 35 20% 85%;
+    --primary: 345 30% 55%;
+    --primary-foreground: 25 20% 10%;
+    --secondary: 25 15% 22%;
+    --secondary-foreground: 35 20% 85%;
+    --muted: 25 15% 22%;
+    --muted-foreground: 30 12% 55%;
+    --accent: 35 50% 48%;
+    --accent-foreground: 25 20% 10%;
+    --destructive: 0 50% 35%;
+    --destructive-foreground: 35 20% 85%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 345 30% 55%;
+    --gold: 35 50% 48%;
+    --gold-light: 35 42% 58%;
+    --gold-dark: 35 55% 32%;
+    --emerald-light: 345 22% 48%;
+    --cream: 25 20% 10%;
+    --cream-dark: 25 18% 16%;
+    --sidebar-background: 25 18% 12%;
+    --sidebar-foreground: 35 20% 85%;
+    --sidebar-primary: 345 30% 55%;
+    --sidebar-primary-foreground: 25 20% 10%;
+    --sidebar-accent: 25 15% 22%;
+    --sidebar-accent-foreground: 35 20% 85%;
+    --sidebar-border: 25 15% 22%;
+    --sidebar-ring: 345 30% 55%;
   }
 }
 
@@ -84,7 +84,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-body antialiased;
   }
   h1, h2, h3, h4 {
     @apply font-serif;
@@ -93,16 +93,16 @@
 
 @layer components {
   .skip-link {
-    @apply absolute -top-10 left-4 z-[100] bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium transition-all focus:top-4;
+    @apply absolute -top-10 left-4 z-[100] bg-primary text-primary-foreground px-4 py-2 rounded text-sm font-medium transition-all focus:top-4;
   }
 
   .geometric-border {
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23c4956a' stroke-width='0.5' opacity='0.15'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%238B7355' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
     background-size: 40px 40px;
   }
 
   .geometric-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c4956a' stroke-width='0.4' opacity='0.1'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Ccircle cx='30' cy='30' r='15'/%3E%3Cpath d='M15 15L45 15L45 45L15 45Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238B7355' stroke-width='0.4' opacity='0.08'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z'/%3E%3Ccircle cx='30' cy='30' r='15'/%3E%3Cpath d='M15 15L45 15L45 45L15 45Z'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 60px 60px;
   }
 
@@ -131,7 +131,7 @@
   }
 
   .gold-gradient {
-    @apply bg-gradient-to-r from-[hsl(38,65%,52%)] to-[hsl(38,55%,72%)];
+    @apply bg-gradient-to-r from-[hsl(35,55%,45%)] to-[hsl(35,45%,60%)];
   }
 
   .timeline-line {
@@ -141,6 +141,21 @@
     .timeline-line {
       @apply left-6;
     }
+  }
+
+  /* Vintage ornamental divider */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: hsl(var(--border));
+  }
+  .ornament-divider::before,
+  .ornament-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: currentColor;
   }
 }
 
