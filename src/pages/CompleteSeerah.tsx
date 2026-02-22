@@ -14,7 +14,7 @@ function ConfidenceBadge({ level }: { level: string }) {
   if (!config) return null;
   const Icon = config.icon;
   return (
-    <span className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full border ${config.className}`}>
+    <span className={`inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded border ${config.className}`}>
       <Icon className="h-3 w-3" /> {config.label}
     </span>
   );
@@ -25,7 +25,7 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
 
   return (
     <article className="mb-12 scroll-mt-24" id={section.id}>
-      <h4 className="font-serif text-xl sm:text-2xl font-semibold mb-4 text-foreground">{section.title}</h4>
+      <h4 className="font-serif text-2xl sm:text-3xl font-semibold mb-4 text-foreground italic">{section.title}</h4>
 
       {(section.dateRange || section.location || section.confidenceLevel) && (
         <div className="flex flex-wrap gap-3 mb-4 text-xs">
@@ -49,7 +49,7 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
             const [title, ...rest] = para.split("\n");
             return (
               <div key={i}>
-                <h5 className="font-serif text-lg font-semibold mt-6 mb-2 text-foreground" dangerouslySetInnerHTML={{ __html: title.replace(/\*\*/g, "") }} />
+                <h5 className="font-serif text-xl font-semibold mt-6 mb-2 text-foreground italic" dangerouslySetInnerHTML={{ __html: title.replace(/\*\*/g, "") }} />
                 {rest.map((p, j) => <p key={j} className="mb-3">{p}</p>)}
               </div>
             );
@@ -65,7 +65,7 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
       </div>
 
       {section.keyFigures && section.keyFigures.length > 0 && (
-        <div className="mt-4 p-3 rounded-lg bg-secondary/50 border border-border">
+        <div className="mt-4 p-3 rounded bg-secondary/50 border border-border">
           <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground mb-1">
             <Users className="h-3 w-3" /> Key Figures
           </div>
@@ -76,14 +76,14 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
       {(section.politicalContext || section.socialContext) && (
         <div className="mt-4 grid sm:grid-cols-2 gap-3">
           {section.politicalContext && (
-            <div className="p-3 rounded-lg bg-card border border-border">
-              <div className="text-xs font-semibold text-muted-foreground mb-1">Political Context</div>
+            <div className="p-3 rounded bg-card border border-border">
+              <div className="text-xs font-semibold text-muted-foreground mb-1 italic">Political Context</div>
               <p className="text-sm text-foreground/80">{section.politicalContext}</p>
             </div>
           )}
           {section.socialContext && (
-            <div className="p-3 rounded-lg bg-card border border-border">
-              <div className="text-xs font-semibold text-muted-foreground mb-1">Social Context</div>
+            <div className="p-3 rounded bg-card border border-border">
+              <div className="text-xs font-semibold text-muted-foreground mb-1 italic">Social Context</div>
               <p className="text-sm text-foreground/80">{section.socialContext}</p>
             </div>
           )}
@@ -91,15 +91,15 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
       )}
 
       {section.narrationVariants && (
-        <div className="mt-4 p-3 rounded-lg border border-accent/30 bg-accent/5">
-          <div className="text-xs font-semibold text-accent-foreground mb-1">📜 Narration Variants</div>
+        <div className="mt-4 p-3 rounded border border-accent/30 bg-accent/5">
+          <div className="text-xs font-semibold text-accent-foreground mb-1 italic">📜 Narration Variants</div>
           <p className="text-sm text-foreground/80">{section.narrationVariants}</p>
         </div>
       )}
 
       {section.whyItMatters && (
-        <div className="mt-4 p-4 rounded-lg border border-gold/30 bg-gradient-to-r from-gold/5 to-transparent">
-          <div className="text-xs font-semibold text-gold-dark mb-1">★ Why It Matters</div>
+        <div className="mt-4 p-4 rounded border border-gold/30 bg-gradient-to-r from-gold/5 to-transparent">
+          <div className="text-xs font-semibold text-gold-dark mb-1 italic">★ Why It Matters</div>
           <p className="text-sm text-foreground/80 italic">{section.whyItMatters}</p>
         </div>
       )}
@@ -128,7 +128,7 @@ function NarrativeSectionBlock({ section }: { section: NarrativeSection }) {
 
       {section.citations && section.citations.length > 0 && (
         <div className="mt-4 pt-3 border-t border-border">
-          <div className="text-xs font-semibold text-muted-foreground mb-1">Sources</div>
+          <div className="text-xs font-semibold text-muted-foreground mb-1 italic">Sources</div>
           <div className="flex flex-wrap gap-2">
             {section.citations.map((c, i) => (
               <span key={i} className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
@@ -153,7 +153,7 @@ function ChapterBlock({ chapter }: { chapter: Chapter }) {
       >
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors">
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-foreground group-hover:text-primary transition-colors italic">
               {chapter.title}
             </h3>
             <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
@@ -224,7 +224,7 @@ export default function CompleteSeerah() {
       {/* Article progress bar */}
       <div
         ref={progressBarRef}
-        className="sticky top-[calc(4rem+4px)] z-30 h-1.5 bg-muted cursor-pointer group"
+        className="sticky top-[calc(3.5rem+2px)] z-30 h-1.5 bg-muted cursor-pointer group"
         onMouseMove={handleProgressBarHover}
         onMouseLeave={() => setHoverProgress((p) => ({ ...p, show: false }))}
       >
@@ -249,8 +249,11 @@ export default function CompleteSeerah() {
         {/* Header */}
         <SectionReveal>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="text-gold text-xs font-medium tracking-[0.3em] uppercase mb-4">Complete Narrative</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">
+            <div className="ornament-divider mb-4">
+              <span className="text-muted-foreground text-sm">✦</span>
+            </div>
+            <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Complete Narrative</p>
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-balance italic">
               The Full Historical Narrative
             </h1>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -268,7 +271,7 @@ export default function CompleteSeerah() {
           {/* Mobile nav toggle */}
           <button
             onClick={() => setNavOpen(!navOpen)}
-            className="lg:hidden fixed bottom-6 right-6 z-40 p-3 rounded-full bg-primary text-primary-foreground shadow-lg"
+            className="lg:hidden fixed bottom-6 right-6 z-40 p-3 rounded bg-primary text-primary-foreground shadow-lg"
             aria-label="Toggle chapter navigation"
           >
             {navOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -288,22 +291,22 @@ export default function CompleteSeerah() {
                 ${navOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
                 transition-transform duration-200
                 w-72 max-h-[80vh] lg:max-h-[calc(100vh-8rem)] overflow-y-auto
-                bg-card border border-border rounded-xl p-4 shadow-lg lg:shadow-sm
+                bg-card border border-border rounded p-4 shadow-lg lg:shadow-sm
                 fixed left-4 top-24 lg:static
               `}
             >
-              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Volumes</div>
+              <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3 italic">Volumes</div>
               {volumes.map((vol) => (
                 <button
                   key={vol.id}
                   onClick={() => { setActiveVolumeId(vol.id); setNavOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                  className={`w-full text-left px-3 py-2.5 rounded-lg mb-1 text-sm transition-colors ${
+                  className={`w-full text-left px-3 py-2.5 rounded mb-1 text-sm transition-colors ${
                     activeVolumeId === vol.id
                       ? "bg-primary/10 text-primary font-medium"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
                   }`}
                 >
-                  <span className="font-serif font-bold text-xs mr-1.5">{vol.number}.</span>
+                  <span className="font-serif font-bold text-xs mr-1.5 italic">{vol.number}.</span>
                   {vol.title}
                   <div className="text-xs mt-0.5 opacity-70">
                     {vol.chapters.reduce((a, ch) => a + ch.readingTimeMinutes, 0)} min
@@ -318,7 +321,7 @@ export default function CompleteSeerah() {
             <SectionReveal>
               <div className="mb-12 pb-8 border-b border-border">
                 <div className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-2">Volume {activeVolume.number}</div>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-2">{activeVolume.title}</h2>
+                <h2 className="font-serif text-4xl sm:text-5xl font-bold mb-2 italic">{activeVolume.title}</h2>
                 <p className="text-muted-foreground">{activeVolume.subtitle}</p>
                 <div className="flex items-center gap-3 mt-3 text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {volumeReadingTime} min read</span>
@@ -345,7 +348,7 @@ export default function CompleteSeerah() {
                         onClick={() => { setActiveVolumeId(prev.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                         className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
                       >
-                        <div className="text-xs text-muted-foreground mb-0.5">← Previous</div>
+                        <div className="text-xs text-muted-foreground mb-0.5 italic">← Previous</div>
                         <div className="font-medium">Vol. {prev.number}: {prev.title}</div>
                       </button>
                     ) : <div />}
@@ -354,7 +357,7 @@ export default function CompleteSeerah() {
                         onClick={() => { setActiveVolumeId(next.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
                         className="text-sm text-muted-foreground hover:text-primary transition-colors text-right"
                       >
-                        <div className="text-xs text-muted-foreground mb-0.5">Next →</div>
+                        <div className="text-xs text-muted-foreground mb-0.5 italic">Next →</div>
                         <div className="font-medium">Vol. {next.number}: {next.title}</div>
                       </button>
                     ) : <div />}

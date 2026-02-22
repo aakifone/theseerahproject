@@ -12,8 +12,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Source Sans 3"', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['"Crimson Text"', 'Georgia', 'serif'],
+        sans: ['"Crimson Text"', 'Georgia', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -82,8 +83,8 @@ export default {
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(38 65% 52% / 0.3)" },
-          "50%": { boxShadow: "0 0 0 8px hsl(38 65% 52% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(35 55% 45% / 0.3)" },
+          "50%": { boxShadow: "0 0 0 8px hsl(35 55% 45% / 0)" },
         },
       },
       animation: {

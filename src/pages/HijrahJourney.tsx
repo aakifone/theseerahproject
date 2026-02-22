@@ -107,8 +107,11 @@ export default function HijrahJourneyPage() {
       {/* Header */}
       <section className="py-16 px-4 bg-card geometric-border border-b border-border">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-gold text-sm font-medium tracking-[0.3em] uppercase mb-4">Interactive Journey</p>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold mb-4">The Hijrah</h1>
+          <div className="ornament-divider mb-4">
+            <span className="text-muted-foreground text-sm">✦</span>
+          </div>
+          <p className="text-gold text-xs tracking-[0.3em] uppercase mb-4">Interactive Journey</p>
+          <h1 className="font-serif text-5xl sm:text-6xl font-bold mb-4 italic">The Hijrah</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Follow the historic migration from Makkah to Madinah — a journey that changed the course of
             history. Navigate through each stop to explore the events, challenges, and miracles of this
@@ -117,11 +120,10 @@ export default function HijrahJourneyPage() {
         </div>
       </section>
 
-      {/* Route Overview SVG */}
+      {/* Route Overview */}
       <section className="py-8 px-4 bg-card/50">
         <div className="container mx-auto max-w-4xl">
           <div className="relative">
-            {/* Simple route visualization */}
             <div className="flex items-center justify-between overflow-x-auto gap-1 py-4">
               {stops.map((stop, i) => (
                 <button
@@ -131,7 +133,7 @@ export default function HijrahJourneyPage() {
                   aria-label={`Go to ${stop.title}`}
                 >
                   <div
-                    className={`w-4 h-4 rounded-full border-2 transition-all ${
+                    className={`w-3.5 h-3.5 rounded-full border-2 transition-all ${
                       i === activeStop
                         ? "bg-gold border-gold scale-125 animate-pulse-gold"
                         : i < activeStop
@@ -149,7 +151,6 @@ export default function HijrahJourneyPage() {
                 </button>
               ))}
             </div>
-            {/* Connecting line */}
             <div className="absolute top-6 left-[40px] right-[40px] h-0.5 bg-border -z-10" />
             <div
               className="absolute top-6 left-[40px] h-0.5 bg-gold transition-all duration-500 -z-10"
@@ -166,18 +167,18 @@ export default function HijrahJourneyPage() {
             <button
               onClick={() => goTo(activeStop - 1)}
               disabled={activeStop === 0}
-              className="p-2 rounded-lg border border-border hover:bg-muted disabled:opacity-30 transition-colors"
+              className="p-2 rounded border border-border hover:bg-muted disabled:opacity-30 transition-colors"
               aria-label="Previous stop"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
-            <span className="text-sm text-muted-foreground min-w-[80px] text-center">
+            <span className="text-sm text-muted-foreground min-w-[80px] text-center italic">
               Stop {activeStop + 1} of {stops.length}
             </span>
             <button
               onClick={() => goTo(activeStop + 1)}
               disabled={activeStop === stops.length - 1}
-              className="p-2 rounded-lg border border-border hover:bg-muted disabled:opacity-30 transition-colors"
+              className="p-2 rounded border border-border hover:bg-muted disabled:opacity-30 transition-colors"
               aria-label="Next stop"
             >
               <ChevronRight className="h-5 w-5" />
@@ -190,11 +191,11 @@ export default function HijrahJourneyPage() {
       <section className="py-12 px-4">
         <div className="container mx-auto max-w-3xl">
           <SectionReveal key={currentStop.id}>
-            <div className="rounded-xl border border-border bg-card p-8">
+            <div className="rounded border border-border bg-card p-8">
               <div className="flex items-start gap-3 mb-4">
                 <MapPin className="h-5 w-5 text-gold shrink-0 mt-1" />
                 <div>
-                  <h2 className="font-serif text-2xl font-bold">{currentStop.title}</h2>
+                  <h2 className="font-serif text-3xl font-bold italic">{currentStop.title}</h2>
                   {(currentStop.estimatedDistance || currentStop.estimatedTime) && (
                     <div className="flex flex-wrap gap-4 mt-2 text-xs text-muted-foreground">
                       {currentStop.estimatedDistance && (
@@ -218,12 +219,12 @@ export default function HijrahJourneyPage() {
 
               <p className="text-base text-foreground leading-relaxed mb-4">{currentStop.description}</p>
 
-              <div className="p-5 rounded-lg bg-muted/30 border border-border mb-6">
+              <div className="p-5 rounded bg-muted/30 border border-border mb-6">
                 <p className="text-sm text-muted-foreground leading-relaxed">{currentStop.details}</p>
               </div>
 
               <div>
-                <h4 className="text-xs font-semibold mb-2 flex items-center gap-1">
+                <h4 className="text-xs font-semibold mb-2 flex items-center gap-1 italic">
                   <BookOpen className="h-3 w-3" /> Citations
                 </h4>
                 <ul className="space-y-1">
@@ -237,7 +238,6 @@ export default function HijrahJourneyPage() {
             </div>
           </SectionReveal>
 
-          {/* Navigation buttons */}
           <div className="flex justify-between mt-8">
             <button
               onClick={() => goTo(activeStop - 1)}
@@ -265,10 +265,10 @@ export default function HijrahJourneyPage() {
         </div>
       </section>
 
-      {/* Text Alternative (Accessibility) */}
+      {/* Text Alternative */}
       <section className="py-12 px-4 bg-card border-t border-border">
         <div className="container mx-auto max-w-3xl">
-          <h2 className="font-serif text-xl font-bold mb-6 text-center">Complete Journey Overview</h2>
+          <h2 className="font-serif text-2xl font-bold mb-6 text-center italic">Complete Journey Overview</h2>
           <p className="text-sm text-muted-foreground text-center mb-8">
             A text-based alternative for all {stops.length} stops of the Hijrah journey.
           </p>
@@ -276,10 +276,10 @@ export default function HijrahJourneyPage() {
             {stops.map((stop, i) => (
               <div key={stop.id} className="flex gap-4">
                 <div className="shrink-0 w-8 text-right">
-                  <span className="text-sm font-bold text-gold">{i + 1}</span>
+                  <span className="text-sm font-bold text-gold font-serif italic">{i + 1}</span>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold">{stop.title}</h3>
+                  <h3 className="text-sm font-semibold italic">{stop.title}</h3>
                   <p className="text-xs text-muted-foreground mt-1">{stop.description}</p>
                 </div>
               </div>
