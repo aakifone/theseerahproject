@@ -11,6 +11,7 @@ const navLinks = [
   { to: "/themes", label: "Themes" },
   { to: "/people-places", label: "People & Places" },
   { to: "/complete-seerah", label: "Full Narrative" },
+  { to: "/rashidun", label: "Rashidun" },
   { to: "/sources", label: "Sources" },
 ];
 
