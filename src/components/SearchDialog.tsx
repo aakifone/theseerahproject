@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Search, X, Clock, MapPin, Users, BookOpen, Lightbulb } from "lucide-react";
 import Fuse from "fuse.js";
 import { events, people, places, themes } from "@/data/seerah-data";
+import { caliphs, masterTimeline } from "@/data/rashidun-data";
 
 interface SearchResult {
-  type: "event" | "person" | "place" | "theme";
+  type: "event" | "person" | "place" | "theme" | "caliph" | "rashidun-event";
   id: string;
   title: string;
   subtitle: string;
@@ -41,6 +42,20 @@ const allItems: SearchResult[] = [
     subtitle: t.summary.slice(0, 80) + "…",
     url: `/themes?theme=${t.id}`,
   })),
+  ...caliphs.map((c) => ({
+    type: "caliph" as const,
+    id: c.id,
+    title: c.name,
+    subtitle: `${c.lifespanRanges} — ${c.overview}`,
+    url: `/rashidun#${c.id}`,
+  })),
+  ...masterTimeline.map((e) => ({
+    type: "rashidun-event" as const,
+    id: e.id,
+    title: e.title,
+    subtitle: `${e.dateRange} — ${e.primaryLocation}`,
+    url: `/rashidun#timeline`,
+  })),
 ];
 
 const fuse = new Fuse(allItems, {
@@ -54,6 +69,8 @@ const typeIcons = {
   person: Users,
   place: MapPin,
   theme: Lightbulb,
+  caliph: Users,
+  "rashidun-event": Clock,
 };
 
 const typeLabels = {
@@ -61,6 +78,8 @@ const typeLabels = {
   person: "Person",
   place: "Place",
   theme: "Theme",
+  caliph: "Caliph",
+  "rashidun-event": "Rashidun Event",
 };
 
 export default function SearchDialog({
@@ -157,8 +176,7 @@ export default function SearchDialog({
             <div className="p-6 text-center">
               <p className="text-sm text-muted-foreground">
                 <BookOpen className="inline h-4 w-4 mr-1 -mt-0.5" />
-                Search across {events.length} events, {people.length} people, {places.length} places, and{" "}
-                {themes.length} themes
+                Search across {events.length} events, {people.length} people, {places.length} places, {themes.length} themes, {caliphs.length} caliphs, and {masterTimeline.length} Rashidun events
               </p>
               <p className="text-xs text-muted-foreground mt-2">
                 Press <kbd className="px-1.5 py-0.5 rounded border border-border bg-muted text-xs">⌘K</kbd> to

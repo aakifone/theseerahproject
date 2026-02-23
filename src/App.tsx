@@ -15,6 +15,7 @@ const PeoplePlaces = lazy(() => import("./pages/PeoplePlaces"));
 const Sources = lazy(() => import("./pages/Sources"));
 const HijrahJourney = lazy(() => import("./pages/HijrahJourney"));
 const CompleteSeerah = lazy(() => import("./pages/CompleteSeerah"));
+const Rashidun = lazy(() => import("./pages/Rashidun"));
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
                 <Route path="/sources" element={<Sources />} />
                 <Route path="/hijrah" element={<HijrahJourney />} />
                 <Route path="/complete-seerah" element={<CompleteSeerah />} />
+                <Route path="/rashidun" element={<Rashidun />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
